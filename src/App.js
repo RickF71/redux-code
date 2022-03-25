@@ -1,7 +1,7 @@
 import './App.css';
 import { useSelector } from 'react-redux';
-import {increment} from './action/CounterAction';
-import {decrement} from './action/CounterAction';
+// import {increment} from './action/CounterAction';
+// import {decrement} from './action/CounterAction';
 import {useDispatch} from 'react-redux';
 import {BrowserRouter as Router, Link, Routes, Route} from 'react-router-dom';
 import { Col, Row, Form, Navbar, 
@@ -9,20 +9,23 @@ import { Col, Row, Form, Navbar,
 import RouteError from './RouteError';
 import Redirect from './Redirect';
 import ReduxHome from './component/ReduxHome';
+import FavoriteColor from './component/FavoriteColor';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
-  console.log('Inside UI');
+  // console.log('Inside UI');
   const counter = useSelector(state=>state);
   const dispatch=useDispatch();
   return (
     <div className="App">
-    
-    <Router>
+      <Router>
           <Container>
             <Navbar className="navigation" fixed="top" expand="lg" >
-            <Navbar.Brand href="/">Rick React</Navbar.Brand>
+            <Navbar.Brand href="/reduxhome">Rick React</Navbar.Brand>
             <NavDropdown title="Assignments" id="basic-nav-dropdown">
-              <NavDropdown.Item><Link to="/reduxhome">Calculator</Link></NavDropdown.Item>
+            <NavDropdown.Item><Link to="/reduxhome">Home</Link></NavDropdown.Item>
+            <NavDropdown.Item><Link to="/favecolor">Favorite Color</Link></NavDropdown.Item>
               {/* <NavDropdown.Item><Link to="/calculator">Calculator</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to="/reactlayout">React Layout</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to="/nbrlist">Number List</Link></NavDropdown.Item>
@@ -47,6 +50,7 @@ function App() {
           
           <Routes>
             <Route path="/reduxHome" element={<ReduxHome />} ></Route>
+            <Route path="/favecolor" element={<FavoriteColor />} ></Route>
             {/* <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<Profile />} />
