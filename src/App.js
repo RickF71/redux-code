@@ -12,6 +12,7 @@ import Redirect from './Redirect';
 import ReduxHome from './component/ReduxHome';
 import About from './component/About';
 import FavoriteColor from './component/FavoriteColor';
+import FavoriteColorCheck from './component/FavoriteColorCheck';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -28,6 +29,7 @@ function App() {
             <NavDropdown title="Assignments" id="basic-nav-dropdown">
             {/* <NavDropdown.Item><Link to="/reduxhome">Home</Link></NavDropdown.Item> */}
             <NavDropdown.Item><Link to="/favecolor">Favorite Color</Link></NavDropdown.Item>
+            <NavDropdown.Item><Link to="/favecolorcheck">Favorite Color Check</Link></NavDropdown.Item>
               {/* <NavDropdown.Item><Link to="/calculator">Calculator</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to="/reactlayout">React Layout</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to="/nbrlist">Number List</Link></NavDropdown.Item>
@@ -53,6 +55,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ReduxHome />} />
             <Route path="/favecolor" element={<FavoriteColor />} />
+            <Route path="/favecolorcheck" element={<FavoriteColorCheck />} />
             <Route path="/about" element={<About />} />
             {/* <Route path="/" element={<Home />} />
             
