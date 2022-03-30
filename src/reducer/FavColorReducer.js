@@ -3,6 +3,7 @@ const initialState={
 }
 
 const FavColorReducer = (state=initialState,action)=> {
+    console.log('FavColorReducer called');
     const newState = {...state};
     switch(action.type) {
         case 'CHANGE_COLOR':

@@ -1,37 +1,52 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {connect,createStoreHook,useDispatch} from 'react-redux';
+import {connect,createStoreHook,useDispatch, useSelector} from 'react-redux';
 import ColorReducerCheck from '../reducer/FavColorCheckReducer';
 import { createStore } from 'redux';
+import { Checkbox } from './Checkbox';
 // import FavColorCheckReducer from '../reducer/FavColorCheckReducer';
 
 // const store=createStore(FavColorReducer);
 
+function FavoriteColorCheck() {
 
-function FavoriteColorCheck(props) {
     let dispatch = useDispatch();
-    // const favcolor = useState(null);
-    const [favcolor, setFavcolor] = useState(null);
-    const handleChange = (e) => {
-        setFavcolor(e.target.value);
-        dispatch({
-            type: "CHANGE_COLOR",
-            payload:favcolor
-        })
-    }
+    
+    const [likings,setLikings] = useState();
+    
+    const colorVal = useSelector(state => state.favcolor);
+    const [preferences, setPreferences] = useState( 
+        { 
+            'yellow': false, 
+            'blue': false, 
+            'green': false, 
+            'brown': false, 
+            'red': false
+        } ) 
+    console.log ('changes : ', colorVal);
+
+
+    function togglePreference(favcolor) { 
+        preferences[favcolor] = !preferences[favcolor]; 
+        // Update favcolor likings 
+        let newLikings = ""; 
+        for ( var favcolor in preferences ) { 
+          if ( preferences[favcolor] ) { 
+            newLikings += favcolor + " "; 
+          } 
+        } 
+        setLikings(newLikings); 
+      } 
    
     return (
         <div>
-            <h1>My favorite color is {favcolor}</h1>
-            <input type="checkbox" value="Yellow" name="favcolor" onClick={handleChange} /> Yellow <br />
-            <input type="checkbox" value="Blue" name="favcolor" onClick={handleChange} /> Blue<br />
-            <input type="checkbox" value="Green" name="favcolor" onClick={handleChange} /> Green<br />
-            <input type="checkbox" value="Brown" name="favcolor" onClick={handleChange} /> Brown<br />
-            <input type="checkbox" value="Red" name="favcolor" onClick={handleChange} /> Red<br />
-            <input type="checkbox" value="Black" name="favcolor" onClick={handleChange} /> Black<br />
-            <input type="checkbox" value="Orange" name="favcolor" onClick={handleChange} /> Orange<br />
-            <input type="checkbox" value="Violet" name="favcolor" onClick={handleChange} /> Violet<br />
-            <input type="checkbox" value="Pink" name="favcolor" onClick={handleChange} /> Pink<br />
+            {/* <h1>My favorite color is {favcolor}</h1> */}
+            <Checkbox onText="yellow" offText="yellow" togglePreference={togglePreference} favcolor="yellow" />
+            <Checkbox onText="blue" offText="blue" togglePreference={togglePreference} favcolor="blue" />
+            <Checkbox onText="green" offText="green" togglePreference={togglePreference} favcolor="green" />
+            <Checkbox onText="brown" offText="brown" togglePreference={togglePreference} favcolor="brown" />
+            <Checkbox onText="red" offText="red" togglePreference={togglePreference} favcolor="red" />
+            <h1> Liked Colors ... {likings}</h1>
         </div>
     );
 }
@@ -41,13 +56,6 @@ const mapStateToProps = state => {
         data: state
     }
 }
-
-const mapDispatchToProps = dispatch => {
-    return{
-        changeColor: (favcolor) => dispatch ({
-            type: "CHANGE_COLOR", payload: favcolor
-        })
-    }
-}
+   
 // export default FavoriteColor;
-export default connect(mapStateToProps,mapDispatchToProps) (FavoriteColorCheck)
+export default FavoriteColorCheck

@@ -13,6 +13,7 @@ import ReduxHome from './component/ReduxHome';
 import About from './component/About';
 import FavoriteColor from './component/FavoriteColor';
 import FavoriteColorCheck from './component/FavoriteColorCheck';
+// import Posts from './component/Posts';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -22,21 +23,16 @@ function App() {
   const dispatch=useDispatch();
   return (
     <div className="App">
+      {/* <Posts /> */}
       <Router>
           <Container>
             <Navbar className="navigation" fixed="top" expand="lg" >
             <Navbar.Brand href="/reduxhome">Rick React</Navbar.Brand>
             <NavDropdown title="Assignments" id="basic-nav-dropdown">
-            {/* <NavDropdown.Item><Link to="/reduxhome">Home</Link></NavDropdown.Item> */}
+           
             <NavDropdown.Item><Link to="/favecolor">Favorite Color</Link></NavDropdown.Item>
-            <NavDropdown.Item><Link to="/favecolorcheck">Favorite Color Check</Link></NavDropdown.Item>
-              {/* <NavDropdown.Item><Link to="/calculator">Calculator</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/reactlayout">React Layout</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/nbrlist">Number List</Link></NavDropdown.Item>
-              <NavDropdown.Item><Link to="/loginform">Login Form</Link></NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item><Link to="/githubext">My Github React</Link></NavDropdown.Item> */}
-          
+            <NavDropdown.Item><Link to="/favecolorcheck">Favorite Color Checkboxes</Link></NavDropdown.Item>
+              
             </NavDropdown>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
@@ -57,15 +53,6 @@ function App() {
             <Route path="/favecolor" element={<FavoriteColor />} />
             <Route path="/favecolorcheck" element={<FavoriteColorCheck />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/" element={<Home />} />
-            
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/calculator" element={<Calculator />} />
-            <Route path="/nbrlist" element={<NumberList />} />
-            <Route path="/reactlayout" element={<ParentToChild />} />
-            <Route path="/loginform" element={<LoginForm />} />
-            <Route path="/loginValidate" element={<LoginValidate />} /> */}
-            {/* <Route path="/dynamiccontent" element={<DynamicContent />} /> */}
  
             <Route path="/githubext" element={() => { 
               window.open("https://github.com/RickF71/react-code");
