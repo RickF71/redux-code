@@ -2,30 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { applyMiddleware, createStore } from 'redux';
-import CounterReducer from './reducer/CounterReducer';
+// import CounterReducer from './reducer/CounterReducer';
 import { Provider } from 'react-redux';
-import reportWebVitals from './reportWebVitals';
-import FavoriteColor from './component/FavoriteColor';
-import FavColorReducer from './reducer/FavColorReducer';
+// import FavoriteColor from './component/FavoriteColor';
+// import FavColorReducer from './reducer/FavColorReducer';
 import FavColorCheckReducer from './reducer/FavColorCheckReducer';
 import MyLogger from './middleware/MyLogger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Store } from 'redux';
-import Posts from './component/Posts';
-import './index.css';
-import postReducer from './reducer/postReducer';
+// import Posts from './component/Posts';
+// import './index.css';
+// import postReducer from './reducer/postReducer';
+import Temp from './component/Temp';
+import reportWebVitals from './reportWebVitals';
 
 const devTools = composeWithDevTools(applyMiddleware(MyLogger))
 
 const store = createStore(FavColorCheckReducer, devTools);
-//const store = createStore(postReducer, devTools);
-console.log('Store created');
+// const store = createStore(postReducer, devTools);
+//console.log('Store created');
 ReactDOM.render(
-    <Provider store={store}>
+  <Provider store={store}>
+  {/* <Provider> */}
     <App />
+    {/* <Temp /> */}
     {/* <Posts /> */}
-    {/* <FavoriteColor /> */}
   </Provider>,
   document.getElementById('root')
 );

@@ -17,17 +17,30 @@ import FavoriteColorCheck from './component/FavoriteColorCheck';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 function App() {
   // console.log('Inside UI');
   const counter = useSelector(state=>state);
   const dispatch=useDispatch();
+  const myStyle={
+    backgroundColor: '#121723', 
+    height:'100vh',
+    color: '#9A7878'
+  };
+  const containerStyle={
+    backgroundColor: '#29290B', 
+    width: 'auto',
+    height:'60px',
+    marginBottom: '10px',
+    color: '#9A9A78',
+  };
   return (
-    <div className="App">
+    <div className="App" style={myStyle}>
       {/* <Posts /> */}
       <Router>
-          <Container>
+          <Container fluid style={containerStyle}>
             <Navbar className="navigation" fixed="top" expand="lg" >
-            <Navbar.Brand href="/reduxhome">Rick React</Navbar.Brand>
+            <Navbar.Brand href="/reduxhome" style={{color:"white"}}>Rick React</Navbar.Brand>
             <NavDropdown title="Assignments" id="basic-nav-dropdown">
            
             <NavDropdown.Item><Link to="/favecolor">Favorite Color</Link></NavDropdown.Item>
@@ -36,7 +49,7 @@ function App() {
             </NavDropdown>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
             <Navbar.Collapse id="navbar-nav">
               <Nav className="me-auto">
             
@@ -64,6 +77,7 @@ function App() {
           <Redirect />
         </Router>
     
+
           
       {/* <h1>Counter: {counter}</h1>
       <button onClick={()=>dispatch(increment())}>+</button>

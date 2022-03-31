@@ -12,7 +12,7 @@ function Checkbox(props) {
   return ( 
     <div>
       <div>
-        <input type="checkbox" onChange={handleChange} />
+        <input type="checkbox" onChange={handleChange} /> &nbsp;
         {checked ? checkedText : uncheckedText}
       </div> 
     </div> 
