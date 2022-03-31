@@ -40,7 +40,7 @@ function App() {
       <Router>
           <Container fluid style={containerStyle}>
             <Navbar className="navigation" fixed="top" expand="lg" >
-            <Navbar.Brand href="/reduxhome" style={{color:"white"}}>Rick React</Navbar.Brand>
+            <Navbar.Brand href="/reduxhome" style={{color:"white", paddingLeft:"10px"}}>Rick React</Navbar.Brand>
             <NavDropdown title="Assignments" id="basic-nav-dropdown">
            
             <NavDropdown.Item><Link to="/favecolor">Favorite Color</Link></NavDropdown.Item>
