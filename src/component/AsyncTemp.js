@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function AsyncTemp(props) {
-    const [user, setUser]= useState(null);
+    const [user, setUser] = useState(null);
     const [error, setError] = useState('');
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/users/1')
@@ -19,5 +19,19 @@ function AsyncTemp(props) {
         </div>
     );
 }
+
+
+// *************************** new stuff
+// const[counter, setCounter] = useState(0);
+
+// const increment = () => {
+//     setCounter((val) => val++)
+// }
+
+// const decrement =() =>{
+//     setCounter((val) = val--)
+// }
+
+
 
 export default AsyncTemp;

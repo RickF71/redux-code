@@ -1,0 +1,11 @@
+
+.topMenuItems {
+    background-color: #29290B;
+    margin-left: .5em;
+    margin-right: .5em;
+    padding:.5em;
+} 
+.expenseArea {
+    background-color: #392525;
+    padding: .5em;
+}

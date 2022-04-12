@@ -23,7 +23,9 @@ function FavoriteColor(props) {
     return (
         <div>
             <h1>My favorite color is {favcolor}</h1>
-            <input type="radio" value="Yellow" name="favcolor" onClick={handleChange} /> Yellow <br />
+            <input type="radio" 
+                value="Yellow" 
+                name="favcolor" onClick={handleChange} /> Yellow <br />
             <input type="radio" value="Blue" name="favcolor" onClick={handleChange} /> Blue<br />
             <input type="radio" value="Green" name="favcolor" onClick={handleChange} /> Green<br />
             <input type="radio" value="Brown" name="favcolor" onClick={handleChange} /> Brown<br />

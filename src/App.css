@@ -14,7 +14,10 @@ body {
   height: 40vmin;
   pointer-events: none;
 }
+.navDropdown {
+  background-color:  #9A9A78;
 
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -43,4 +46,8 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.bg-light {
+  background-color: rgb(194, 194, 50);
 }

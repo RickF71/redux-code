@@ -13,7 +13,8 @@ import ReduxHome from './component/ReduxHome';
 import About from './component/About';
 import FavoriteColor from './component/FavoriteColor';
 import FavoriteColorCheck from './component/FavoriteColorCheck';
-// import Posts from './component/Posts';
+import Posts from './component/Posts';
+import BudgetPlanner from './component/BudgetPlanner';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -41,24 +42,15 @@ function App() {
           <Container fluid style={containerStyle}>
             <Navbar className="navigation" fixed="top" expand="lg" >
             <Navbar.Brand href="/reduxhome" style={{color:"white", paddingLeft:"10px"}}>Rick React</Navbar.Brand>
-            <NavDropdown title="Assignments" id="basic-nav-dropdown">
-           
-            <NavDropdown.Item><Link to="/favecolor">Favorite Color</Link></NavDropdown.Item>
-            <NavDropdown.Item><Link to="/favecolorcheck">Favorite Color Checkboxes</Link></NavDropdown.Item>
-              
+            <NavDropdown title="Assignments" id="basic-nav-dropdown" variant="dark">
+              <NavDropdown.Item  ><Link to="/favecolor">Favorite Color</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/favecolorcheck">Favorite Color Checkboxes</Link></NavDropdown.Item>
+              <NavDropdown.Item><Link to="/posts">Posts</Link></NavDropdown.Item>  
+              <NavDropdown.Item><Link to="/budget">Budget Planner</Link></NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
-            {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-            <Navbar.Collapse id="navbar-nav">
-              <Nav className="me-auto">
-            
-                
-              </Nav>
-            </Navbar.Collapse>
-       
             </Navbar>
-            
           </Container>
           
           <Routes>
@@ -66,6 +58,8 @@ function App() {
             <Route path="/favecolor" element={<FavoriteColor />} />
             <Route path="/favecolorcheck" element={<FavoriteColorCheck />} />
             <Route path="/about" element={<About />} />
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/budget" element={<BudgetPlanner />} />
  
             <Route path="/githubext" element={() => { 
               window.open("https://github.com/RickF71/react-code");

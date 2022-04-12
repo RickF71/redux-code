@@ -24,7 +24,7 @@ const store = createStore(FavColorCheckReducer, devTools);
 //console.log('Store created');
 ReactDOM.render(
   <Provider store={store}>
-  {/* <Provider> */}
+    {/* <Provider> */}
     <App />
     {/* <Temp /> */}
     {/* <Posts /> */}
